@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons (click)="cerrarModal()" slot="end" mode="md" shape="round">
+      <ion-button>
+        <ion-icon name="close-outline" style="color: white;font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Carrito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="5">
+            <p style="font-size:15px">Nombre</p>
+          </ion-col>
+          <ion-col size="5">
+            <p style="font-size:15px">Cantidad</p>
+          </ion-col>
+          <ion-col size="2">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list-header>
+    <ion-item lines="none" *ngFor="let element of carro">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6">
+            {{element.juego.title}}
+          </ion-col>
+          <ion-col size="4">
+            {{element.cantidad}}
+          </ion-col>
+          <ion-col size="2">
+            <ion-icon name="trash-sharp" style="font-size: 20px; cursor: pointer;" (click)="eliminar(element.juego.id)"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<div style="background-color: white;">
+  <ion-button (click)="reservar()">Reservar</ion-button>
+</div>
+<ion-toolbar>
+  <ion-tabs>
+    <!-- Tab bar -->
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button (click)="abrirMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/home']">
+        <ion-icon name="home"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/carrito']">
+        <ion-icon name="cart"  style="color:#416bdd ;"></ion-icon>
+        <ion-badge style="margin-left: 10px;padding: 3px;font-size: 18px;">{{carro.length}}</ion-badge>
+      </ion-tab-button>
+      <ion-tab-button (click)="close()">
+        <ion-icon name="enter"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

@@ -1,0 +1,82 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+ion-badge{
+  font-size: 20px;
+}
+#badge{
+  color: #8c8c8c;
+}
+#cardContent{
+  text-align: center;
+}
+ion-input{
+  font-size: 0.8em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+ion-label{
+  font-weight: bold;
+}
+.labelNombre{
+  color: red !important;
+}
+.labelLenguaje{
+  color: green;
+}
+.imagen{
+  width: 100px;
+  object-fit:scale-down;
+}
+.titulo{
+  font-size: 15px;
+}
+.card{
+  display: flex;
+  justify-content: center;
+}
+
+ion-card:hover{
+  background-color: #522195;
+  cursor: pointer;
+}
+ion-item:hover{
+  --background: #5c25a8cb;
+  cursor: pointer;
+  color: white;
+}
+ion-toolbar{
+  --background: #522195;
+}
+.user{
+  font-size: 50px;
+  border: 1px solid #522195;
+  border-radius: 120px;
+  padding: 10px;
+}
+.button-inner:hover{
+  color: #522195;
+}

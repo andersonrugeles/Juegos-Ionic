@@ -1,0 +1,122 @@
+<ion-menu side="start" menuId="first" contentId="main">
+  <ion-header>
+    <ion-toolbar>
+      <ion-icon name="close-outline" style="margin-left: 10px;font-size: 27px;cursor: pointer;" (click)="cerrarMenu()"></ion-icon>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12" style="display: flex;justify-content: center;">
+          <ion-avatar style="width: 70px;">
+            <ion-icon name="person-sharp" class="user"></ion-icon>
+          </ion-avatar>
+        </ion-col>
+        <ion-col size="12" style="display: flex;justify-content: center;">
+          <h3>{{user.email}}</h3>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-list>
+      <ion-item (click)="cerrarMenu()">
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="4">
+              <ion-icon name="home-sharp" style="font-size: 22px;"></ion-icon>
+            </ion-col>
+            <ion-col size="8" style="font-size:20px;">
+              Inicio
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item (click)="abrirCarrito()">
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="4">
+              <ion-icon name="cart-sharp" style="font-size: 24px;"></ion-icon>
+            </ion-col>
+            <ion-col size="8" style="font-size:20px;">
+              Carrito
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item (click)="cerrarMenu()">
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="4">
+              <ion-icon name="game-controller-sharp" style="font-size: 24px;"></ion-icon>
+            </ion-col>
+            <ion-col size="8" style="font-size:20px;">
+              Juegos
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item (click)="close()">
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="4">
+              <ion-icon name="caret-back-circle-sharp" style="font-size: 24px;"></ion-icon>
+            </ion-col>
+            <ion-col size="8" style="font-size:20px;">
+              Salir
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+    <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-content>
+</ion-menu>
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col
+          size="11"
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+          "
+        >
+          Juegos
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-progress-bar *ngIf="!peticion" type="indeterminate"></ion-progress-bar>
+  <ion-card *ngFor="let game of games" style="-webkit-box-shadow: -2px 11px 19px 3px rgba(0,0,0,0.75);
+  -moz-box-shadow: -2px 11px 19px 3px rgba(0,0,0,0.75);
+  box-shadow: -2px 11px 19px 3px rgba(0,0,0,0.75);" (click)="abrirModal(game)">
+      <img src="{{game.thumbnail}}"/>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <!-- Tab bar -->
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button (click)="abrirMenu()">
+          <ion-icon name="menu"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button>
+          <ion-icon name="home" style="color:#416bdd ;"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button (click)="abrirCarrito()">
+          <ion-icon name="cart"></ion-icon>
+          <ion-badge style="margin-left: 10px;padding: 3px;font-size: 18px;">{{carrito.length}}</ion-badge>
+        </ion-tab-button>
+        <ion-tab-button (click)="close()">
+          <ion-icon name="enter"></ion-icon>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>

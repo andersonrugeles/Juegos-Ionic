@@ -1,0 +1,7 @@
+{
+  "name": "clase-ionic-1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

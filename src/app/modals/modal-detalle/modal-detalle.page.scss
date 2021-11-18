@@ -1,0 +1,18 @@
+ion-icon:hover{
+    color: #51219573;
+    cursor: pointer;
+}
+ion-icon{
+    color: #522195;
+}
+ion-button:hover{
+    --background-activated: var(--ion-color-primary-shade, #522195);
+    --background-focused: var(--ion-color-primary-shade, #522195);
+    --background-hover: var(--ion-color-primary-tint, #522195);
+}
+ion-button{
+    width: 100%;
+    --color: #ffffff;
+    --background: #522195 ;
+}
+

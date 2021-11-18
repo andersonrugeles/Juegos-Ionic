@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons (click)="cerrarModal()" slot="end" mode="md" shape="round">
+      <ion-button>
+        <ion-icon name="close-outline" style="color: white;font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header style="padding: 5px;">
+      <strong style="color: black"><h3>{{game.title}}</h3></strong>
+      <ion-img src="{{game.thumbnail}}"></ion-img>
+    </ion-card-header>
+    <ion-card-content style="margin-top: 3px;padding: 5px;">
+      <strong style="color: black">Descripcion</strong><br />
+      {{game.short_description}}<br />
+      <strong style="color: black">Desarrollador</strong><br />
+      {{game.developer}}
+    </ion-card-content>
+    <ion-card-content style="padding: 0px;">
+      <ion-row>
+        <ion-col size="4" style="justify-content: center;display: flex;font-size: 40px;">
+          <ion-icon name="remove-circle" (click)="disminuirCantidad()"></ion-icon>
+        </ion-col>
+        <ion-col size="4"style="justify-content: center;display: flex;font-size: 30px;">
+         {{cantidad}}
+        </ion-col>
+        <ion-col size="4" style="justify-content: center;display: flex;font-size: 40px;">
+          <ion-icon name="add-circle" (click)="agregarCantidad()"></ion-icon>
+        </ion-col>
+      </ion-row> 
+    </ion-card-content>
+    <ion-button (click)="agregarCarrito(game)">Añadir</ion-button>
+  </ion-card>
+</ion-content>

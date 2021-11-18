@@ -1,0 +1,30 @@
+<ion-content>
+  <ion-card
+    style="
+      margin-top: 50px;"
+  >
+  <form [formGroup]="frm" (ngSubmit)="onSubmit()">
+    <ion-item>
+    <ion-img src="../../assets/icon/logo-1.png"></ion-img>
+    </ion-item>
+    <ion-item style="margin-top: 10px;">
+      <ion-icon name="person-circle-outline" style="margin-right: 10px;"></ion-icon>
+      <ion-input required formControlName="email" placeholder="Email"></ion-input>
+    </ion-item>
+    <ion-item style="margin-top: 10px;">
+      <ion-icon name="bag-remove-outline" style="margin-right: 10px;"></ion-icon>
+      <ion-input required formControlName="password" type="password" placeholder="Password"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="full" [disabled]="frm.invalid" style="margin-top: 10px;">Iniciar Sesion</ion-button>
+  </form>
+</ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar style="display: flex;justify-content: center;">
+      <ion-button style="justify-content: center;width: 100%;" [routerLink]="['/registro']">
+        Registrarse 
+      </ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+
